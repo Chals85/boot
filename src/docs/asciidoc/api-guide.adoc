@@ -1,0 +1,161 @@
+ifndef::snippets[]
+:snippets: ../../../build/generated-snippets
+endif::[]
+= 게시판 API DOCUMENT
+:toc: left
+:toclevels: 2
+:sectlinks:
+
+[[resources-common]]
+== 공통사항
+
+[[resources-common-http]]
+=== HTTP response
+[source,http,options="nowrap"]
+----
+Content-Type: application/json
+
+{"code":"DONE"}
+----
+|===
+|필드|타입|필수값|설명
+
+|`+code+`
+|`+String+`
+|`+true+`
+|결과
+|`+msg+`
+|`+String+`
+|
+|메시지
+|`+data+`
+|`+Object+`
+|
+|데이터
+
+|===
+`_msg와 data필드는 해당 데이터가 있을 경우 필드를 제공함_`
+
+=== Response Code
+|===
+|HTTP 응답코드|코드|설명
+
+|200
+|`+DONE+`
+|정상
+|400
+|`+VALIDATION_ERROR+`
+|요청하신 파라미터가 올바르지 않습니다.
+|403
+|`+FORBIDDEN_REQUEST+`
+|허용되지 않은 요청입니다.
+|404
+|`+NOT_FOUND_BOARD+`
+|존재하지 않는 게시글입니다.
+|404
+|`+NOT_FOUND_COMMENT+`
+|존재하지 않는 댓글입니다.
+|500
+|`+INTERNAL_SERVER_ERROR+`
+|내부 시스템 서버 에러입니다.
+
+|===
+
+
+[[resources-board]]
+== 게시판 API
+
+
+[[resources-post-board-one]]
+=== 등록
+
+==== HTTP request
+include::{snippets}/post-board-one/http-request.adoc[]
+include::{snippets}/post-board-one/request-fields.adoc[]
+==== HTTP response
+include::{snippets}/post-board-one/http-response.adoc[]
+include::{snippets}/post-board-one/response-fields.adoc[]
+
+
+[[resources-get-board-all]]
+=== 목록 조회
+
+==== HTTP request
+include::{snippets}/get-board-all/http-request.adoc[]
+include::{snippets}/get-board-all/request-parameters.adoc[]
+==== HTTP response
+include::{snippets}/get-board-all/http-response.adoc[]
+include::{snippets}/get-board-all/response-fields.adoc[]
+
+
+[[resources-get-board-one]]
+=== 상세 조회
+
+==== HTTP request
+include::{snippets}/get-board-one/http-request.adoc[]
+include::{snippets}/get-board-one/path-parameters.adoc[]
+==== HTTP response
+include::{snippets}/get-board-one/http-response.adoc[]
+include::{snippets}/get-board-one/response-fields.adoc[]
+
+
+[[resources-put-board-one]]
+=== 수정
+
+==== HTTP request
+include::{snippets}/put-board-one/http-request.adoc[]
+include::{snippets}/put-board-one/request-fields.adoc[]
+==== HTTP response
+include::{snippets}/put-board-one/http-response.adoc[]
+include::{snippets}/put-board-one/response-fields.adoc[]
+
+
+[[resources-delete-order-one]]
+=== 삭제
+
+==== HTTP request
+include::{snippets}/delete-board-one/http-request.adoc[]
+include::{snippets}/delete-board-one/request-parameters.adoc[]
+==== HTTP response
+include::{snippets}/delete-board-one/http-response.adoc[]
+include::{snippets}/delete-board-one/response-fields.adoc[]
+
+
+[[resources-comment]]
+== 댓글 API
+
+
+[[resources-post-comment-one]]
+=== 등록
+
+==== HTTP request
+include::{snippets}/post-comment-one/http-request.adoc[]
+include::{snippets}/post-comment-one/path-parameters.adoc[]
+include::{snippets}/post-comment-one/request-fields.adoc[]
+==== HTTP response
+include::{snippets}/post-comment-one/http-response.adoc[]
+include::{snippets}/post-comment-one/response-fields.adoc[]
+
+
+[[resources-put-comment-one]]
+=== 수정
+
+==== HTTP request
+include::{snippets}/put-comment-one/http-request.adoc[]
+include::{snippets}/put-comment-one/path-parameters.adoc[]
+include::{snippets}/put-comment-one/request-fields.adoc[]
+==== HTTP response
+include::{snippets}/put-comment-one/http-response.adoc[]
+include::{snippets}/put-comment-one/response-fields.adoc[]
+
+
+[[resources-delete-comment-one]]
+=== 삭제
+
+==== HTTP request
+include::{snippets}/delete-comment-one/http-request.adoc[]
+include::{snippets}/delete-comment-one/path-parameters.adoc[]
+include::{snippets}/delete-comment-one/request-parameters.adoc[]
+==== HTTP response
+include::{snippets}/delete-comment-one/http-response.adoc[]
+include::{snippets}/delete-comment-one/response-fields.adoc[]
