@@ -9,6 +9,7 @@
 + JPA
 + JDK11
 + Gradle
++ Junit
 ## 프로젝트 빌드
     ./gradlew clean build
 ## API 문서
